@@ -1,0 +1,63 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int dashboard(string username, string mail){
+	cout<<"USERNAME: "<<username<<endl<<"EMAIL: "<<mail<<endl;
+	return 0;
+}
+
+int login(string username, string password, string mail){
+	string Username, Password,ans;
+	cout<<"ENTER USERNAME"<<endl;
+	cin>>Username;
+	cout<<"ENTER PASSWORD"<<endl;
+	cin>>Password;
+	if(Username == username && Password == password){
+		cout<<"YOU HAVE LOGGED IN SUCCESSFULLY"<<endl;
+		cout<<"GO TO YOUR DASHBOARD"<<endl<<"YES OR NO";
+		cin>>ans;
+		if(ans == "YES"){
+			dashboard(username, mail);
+			}
+		else{
+			cout<<"THANKU "<<endl;
+			}
+	}
+	else{
+		cout<<"INCORRECT PASSWORD"<<endl;
+	}
+	return 0; 
+}
+
+
+int main(){
+	
+	string username,password, mail,ans;
+	cout<<"SIGNUP OR LOGIN"<<endl<<"USE CAPITALS"<<endl;
+	cin>> ans;
+	if(ans == "SIGNUP")
+	{
+	cout<<"ENTER EMAIL ID"<<endl;
+	cin>>mail;
+	cout<<"ENTER USERNAME"<<endl;
+	cin>>username;
+	cout<<"ENTER PASSWORD"<<endl;
+	cin>>password;
+	cout<<"SIGNUP SUCCESSFUL"<<endl;
+	cout<<"ENTER LOGIN TO LOGIN"<<endl;
+	cin>>ans;
+	 if(ans=="LOGIN"){
+		login(username, password,mail);
+	}
+	else{
+		cout<<"ERROR"<<endl;
+	}
+	
+	}
+	else if(ans == "LOGIN"){
+		login("aarushi","abcd","ahanda_be20");
+		
+	}
+	return 0;}
+	
+	
